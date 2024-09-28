@@ -41,20 +41,20 @@ function levelup(){
      gameFlash(ranBtn);
 }
 
-function checkAns(idx){ 
-    // console.log("curr level:",level);
-    if(userSeq[idx]==userSeq[idx])
-    {
-        console.log("same value");
-        if(userSeq.length==gameSeq.length)
-        {
-            setTimeout(levelup,1000);
+    function checkAns(idx){ 
+        if(userSeq[idx] == gameSeq[idx]) {
+            console.log("same value");
+            if(userSeq.length == gameSeq.length) {
+                setTimeout(levelup, 1000);
+            }
+        } else {
+            h2.innerText = `Game over, press any key to start`;
+            started = false; 
+            gameSeq = [];    
+            level = 0;      
         }
     }
-    else{
-        h2.innerText=`Game over press any key to start`;
-    }
-}
+
 function btnPress(){
     console.log("button was clicked");
     console.log(this);
